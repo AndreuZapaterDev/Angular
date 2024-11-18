@@ -1,0 +1,17 @@
+<div class="deslizador">
+    <div class="imagenes-deslizador">
+      <img [src]="fotos[indiceIzquierda].url" class="izquierda">
+      <img [src]="fotos[indiceCentro].url" class="centro">
+      <img [src]="fotos[indiceDerecha].url" class="derecha">
+    </div>
+    <div class="puntos">
+        @for (foto of fotos; track foto.id) {
+          <span [class.activo]="foto.id === indiceCentro" (click)="irAIndice(foto.id)"></span>
+        }
+      </div>
+    <div class="navegacion">
+      <button (click)="anterior()">Anterior</button>
+      <button (click)="siguiente()">Siguiente</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

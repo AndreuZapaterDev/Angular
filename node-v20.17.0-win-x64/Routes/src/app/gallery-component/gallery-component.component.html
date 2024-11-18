@@ -1,0 +1,9 @@
+<div>
+    <button [ngClass]="{'hovered': isHoveredArtists}" (mouseenter)="onMouseEnterArtists()" (mouseleave)="onMouseLeaveArtists()">
+      <a routerLink="artists">Artists</a>
+    </button>
+    <button [ngClass]="{'hovered': isHoveredPaints}" (mouseenter)="onMouseEnterPaints()" (mouseleave)="onMouseLeavePaints()">
+      <a routerLink="paints">Paints</a>
+    </button>
+  </div>
+  <router-outlet></router-outlet>

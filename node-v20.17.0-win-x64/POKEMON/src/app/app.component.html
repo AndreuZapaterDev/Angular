@@ -1,0 +1,25 @@
+<h1>{{ title }}</h1>
+
+<div class="contenedor-pokemon">
+  <h2>Pokémon Impares</h2>
+  @for (pokemon of listaPokemon; track pokemon) {
+    @if (pokemon % 2 !== 0) {
+      <div class="tarjeta">
+        <div class="numero-tarjeta">{{ pokemon }}</div>
+        <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/' + ('00' + pokemon).slice(-3) + '.png'" alt="Pokemon {{ pokemon }}">
+      </div>
+    }
+  }
+</div>
+
+<div class="contenedor-pokemon">
+  <h2>Pokémon Múltiplos de 3</h2>
+  @for (pokemon of listaPokemon; track pokemon) {
+    @if (pokemon % 3 === 0) {
+      <div class="tarjeta">
+        <div class="numero-tarjeta">{{ pokemon }}</div>
+        <img [src]="'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/' + ('00' + pokemon).slice(-3) + '.png'" alt="Pokemon {{ pokemon }}">
+      </div>
+    }
+  }
+</div>

@@ -1,0 +1,49 @@
+.photo-container {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  background-color: #f9f9f9;
+  width: 30vw;
+  overflow: hidden;
+}
+
+.photo-container img {
+  max-width: 60vw;
+  max-height: 60vw;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.photo-container img:hover {
+  transform: scale(1.05);
+}
+
+.photo-container h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.photo-container .buttons {
+  margin-top: 10px;
+}
+
+.photo-container button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.photo-container button:hover {
+  background-color: #0056b3;
+}

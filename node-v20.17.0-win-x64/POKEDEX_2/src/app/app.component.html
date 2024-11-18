@@ -1,0 +1,13 @@
+<h2>Liked Pokemons</h2>
+<div class="pokemon-list">
+  @for (pokemon of likedPokemons; track pokemon.id){
+    <app-pokemon [pokemon]="pokemon" (likeChange)="updatePokemon($event)"></app-pokemon>
+  }
+</div>
+<h2>Disliked Pokemons</h2>
+<div class="pokemon-list">
+  @for (pokemon of dislikedPokemons; track pokemon.id){
+    <app-pokemon [pokemon]="pokemon" (likeChange)="updatePokemon($event)"></app-pokemon>
+  }
+</div>
+<router-outlet></router-outlet>

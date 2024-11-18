@@ -1,0 +1,41 @@
+<h1>Ejemplos de if</h1>
+
+@if (isUserLogged) {
+<p>Hola usuario registrado</p>
+} @else {
+<p>Hola usuario desconocido</p>
+}
+
+<h1>Ejemplos de for</h1>
+
+<p>Para recorrer arrays de objetos:</p>
+@for (bookmark of userBookmarks; track bookmark.id) {
+<li>{{ bookmark.url }}</li>
+} @empty {
+<li>Sin favoritos actualmente...</li>
+}
+
+<p>Para recorrer Strings como <span style="font-weight: bolder;">{{title}}</span>, mediante el uso de la posición de la letra:</p>
+@for (char of title; let idx = $index; track idx) {
+<li>Pos: {{idx}} - Letra: {{ char }}</li>
+}
+
+<p>Para recorrer Objetos Iterables, mediante el uso de la posición de los elementos</p>
+@for (entry of myMap; let idx = $index; track idx) {
+<li>{{ entry[0] }}: {{ entry[1] }}</li>
+}
+
+<p>Para saber si es el primer y último elemento recorrido</p>
+@for (bookmark of userBookmarks; track bookmark.id; let first = $first, last = $last) {
+  <li>{{ bookmark.url }} {{first ? '- Es el primer elemento': ''}} {{last ? '- Es el último elemento': ''}} </li>
+}
+
+<p>Para saber si el elemento es par o impar</p>
+@for (bookmark of userBookmarks; track bookmark.id; let odd = $odd, even = $even) {
+  <li>{{ bookmark.url }} - Elemento {{ odd ? 'Impar' : '' }}  {{ even ? 'Par' : '' }}</li>
+}
+
+<p>Para saber cuantos elementos hay en total</p>
+@for (bookmark of userBookmarks; track bookmark.id; let idx = $index; let count = $count) {
+  <li>{{ bookmark.url }} - {{idx + 1}}/{{count}} </li>
+}

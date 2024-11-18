@@ -1,0 +1,46 @@
+.avatar-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  background-color: #f9f9f9;
+}
+
+.avatar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+.avatar-header img:hover {
+  transform: scale(1.1);
+}
+
+.avatar-header h2 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}
+
+.avatar-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.avatar-details p strong {
+  color: #333;
+}

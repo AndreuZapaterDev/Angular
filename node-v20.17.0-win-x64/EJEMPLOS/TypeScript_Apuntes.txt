@@ -1,0 +1,122 @@
+
+## Apuntes de Código de TypeScript
+
+### 1. Tipos Básicos
+```typescript
+let nombre: string = "Juan";
+let edad: number = 30;
+let activo: boolean = true;
+let valores: number[] = [1, 2, 3];
+```
+
+### 2. Tipos Personalizados (Alias)
+```typescript
+type Punto = { x: number, y: number };
+let coordenada: Punto = { x: 10, y: 20 };
+```
+
+### 3. Funciones con Tipado
+```typescript
+function sumar(a: number, b: number): number {
+    return a + b;
+}
+
+const resta = (a: number, b: number): number => a - b;
+```
+
+### 4. Parámetros Opcionales y con Valores por Defecto
+```typescript
+function saludar(nombre: string, saludo: string = "Hola"): string {
+    return `${saludo}, ${nombre}`;
+}
+
+saludar("Carlos"); // "Hola, Carlos"
+saludar("Carlos", "Buenos días"); // "Buenos días, Carlos"
+```
+
+### 5. Interfaces
+```typescript
+interface Persona {
+    nombre: string;
+    edad: number;
+    saludar(): void;
+}
+
+let persona: Persona = {
+    nombre: "Ana",
+    edad: 25,
+    saludar() {
+        console.log(`Hola, soy ${this.nombre}`);
+    }
+};
+```
+
+### 6. Clases
+```typescript
+class Animal {
+    constructor(public nombre: string) {}
+
+    mover(distancia: number): void {
+        console.log(`${this.nombre} se movió ${distancia} metros.`);
+    }
+}
+
+let perro = new Animal("Perro");
+perro.mover(10);
+```
+
+### 7. Herencia
+```typescript
+class Perro extends Animal {
+    ladrar(): void {
+        console.log("¡Guau!");
+    }
+}
+
+let miPerro = new Perro("Firulais");
+miPerro.ladrar();  // "¡Guau!"
+miPerro.mover(5);  // "Firulais se movió 5 metros."
+```
+
+### 8. Generics
+```typescript
+function identidad<T>(valor: T): T {
+    return valor;
+}
+
+let numero = identidad<number>(42);
+let texto = identidad<string>("Hola");
+```
+
+### 9. Enumeraciones
+```typescript
+enum Color {
+    Rojo = 1,
+    Verde,
+    Azul
+}
+
+let colorFavorito: Color = Color.Verde;
+```
+
+### 10. Modulos
+```typescript
+// archivo: matematicas.ts
+export function sumar(a: number, b: number): number {
+    return a + b;
+}
+
+// archivo: app.ts
+import { sumar } from "./matematicas";
+console.log(sumar(3, 4)); // 7
+```
+
+### 11. Tipos Union y Type Assertions
+```typescript
+function imprimirId(id: number | string): void {
+    console.log("ID:", id);
+}
+
+let codigo: any = "ABC123";
+let longitud: number = (codigo as string).length;
+```
