@@ -1,9 +1,11 @@
-<div>
-    <button [ngClass]="{'hovered': isHoveredArtists}" (mouseenter)="toggleHoverArtists()" (mouseleave)="toggleHoverArtists()">
-      <a routerLink="artists">Artists</a>
-    </button>
-    <button [ngClass]="{'hovered': isHoveredPaints}" (mouseenter)="toggleHoverPaints()" (mouseleave)="toggleHoverPaints()">
-      <a routerLink="paints">Paints</a>
-    </button>
-    <router-outlet></router-outlet>
-  </div>
+<nav class="navbar">
+  <ul>
+    <li>
+      <a routerLink="artists" [ngClass]="{'hovered': isHoveredArtists}" (mouseenter)="toggleHoverArtists()" (mouseleave)="toggleHoverArtists()">Artists</a>
+    </li>
+    <li>
+      <a routerLink="paints" [ngClass]="{'hovered': isHoveredPaints}" (mouseenter)="toggleHoverPaints()" (mouseleave)="toggleHoverPaints()">Paints</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

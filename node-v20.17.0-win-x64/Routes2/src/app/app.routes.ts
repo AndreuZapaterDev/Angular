@@ -6,11 +6,13 @@ import { PaintsComponent } from './paints/paints.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'gallery', component: GalleryComponent, children: [
-    { path: 'artists', component: ArtistsComponent },
-    { path: 'paints', component: PaintsComponent }
+  { path: 'home', title: 'Home', component: HomeComponent,},
+  { path: 'gallery', title: 'Gallery', component: GalleryComponent,
+    children: [
+    { path: 'artists',  title: 'Artists' , component: ArtistsComponent },
+    { path: 'paints',  title: 'Paints', component: PaintsComponent }
   ]},
-  { path: 'contacts', component: ContactsComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: 'contacts',  title: 'Contact', component: ContactsComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home'}
 ];

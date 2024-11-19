@@ -1,9 +1,53 @@
+/* Estilos para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Altura de la barra de navegación */
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+  bottom: 0; /* Posiciona la barra en la parte inferior */
+  left: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 10px; /* Espacio entre los elementos de la lista */
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  background-color: #4CAF50;
+}
+
+.navbar li a:hover {
+  transform: scale(1.1);
+}
+
 .hovered {
-    animation: hoverAnimation 1s infinite;
-  }
-  
-  @keyframes hoverAnimation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-  }
+  animation: rainbowAnimation 1s infinite;
+}
+
+@keyframes rainbowAnimation {
+  0% { background-color: red; }
+  14% { background-color: orange; }
+  28% { background-color: yellow; }
+  42% { background-color: green; }
+  57% { background-color: blue; }
+  71% { background-color: indigo; }
+  85% { background-color: violet; }
+  100% { background-color: red; }
+}
